@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import { TodoList } from "../../components/TodoList";
 import { TodoInput } from '../../components/TodoInput';
-import { Todo } from '../../types';
 
 function MainToDo() {
 
   const addTodo = (task: string) => {
-    const newTodo: Todo = { id: Date.now(), task, completed: false };
+    fetch('https://dummyjson.com/todos/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        todo: task,
+        completed: false,
+        userId: 5,
+      })
+    })
+    .then(res => res.json())
+    .then(newTodo => {
+      console.log("New Todo added:", newTodo);
+      // Handle the response as needed
+    })
+    .catch(error => console.error('Error adding todo:', error));
   };
 
   return (
