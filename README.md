@@ -3,7 +3,8 @@ An update &amp; configured [ReactJS](https://reactjs.org), [TypeScript](https://
 # Getting Started
 
 ```bash
-cd frontend
+git clone https://github.com/Emmanuel-kwizera/ToDo-app.git
+cd ToDo-app
 yarn install
 yarn dev
 ```
