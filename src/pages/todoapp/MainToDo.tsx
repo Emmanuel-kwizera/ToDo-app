@@ -17,7 +17,6 @@ function MainToDo() {
     .then(res => res.json())
     .then(newTodo => {
       console.log("New Todo added:", newTodo);
-      // Handle the response as needed
     })
     .catch(error => console.error('Error adding todo:', error));
   };
